@@ -1,2 +1,11 @@
-# infinispan-server-docker
-Docker image for Infinispan Server
+## Clustered Infinispan Server Docker image
+
+
+### Usage 
+
+To create a cluster, launch two or more servers with:
+
+```
+docker run -ti gustavonalle/infinispan-server
+``` 
+

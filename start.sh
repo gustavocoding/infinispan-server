@@ -1,5 +1,4 @@
 #!/bin/bash
 
-IP=$(ip a s | sed -ne '/127.0.0.1/!{s/^[ \t]*inet[ \t]*\([0-9.]\+\)\/.*$/\1/p}')
-
+IP=$(ip addr list eth0 |grep "inet " |cut -d' ' -f6|cut -d/ -f1)
 exec /opt/jboss/infinispan-server/bin/standalone.sh -c clustered.xml -Djgroups.join_timeout=1000 -Djgroups.bind_addr=$IP -Djboss.bind.address=$IP "$@"

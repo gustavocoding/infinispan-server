@@ -6,7 +6,7 @@ MAINTAINER gustavonalle
 ENV INFINISPAN_SERVER_HOME /opt/jboss/infinispan-server
 
 # Set the INFINISPAN_VERSION env variable
-ENV INFINISPAN_VERSION 8.2.2.Final
+ENV INFINISPAN_VERSION 8.2.3.Final
 
 ENV HOME /opt/jboss
 

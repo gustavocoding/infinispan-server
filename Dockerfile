@@ -18,6 +18,15 @@ RUN mkdir -p $HOME && cd $HOME && curl -o $HOME/infinispan.zip "https://repo1.ma
 
 COPY start.sh /opt/jboss/infinispan-server/bin/
 
+# For Openshift
+USER root
+
+RUN chgrp -R 0 /opt/jboss/infinispan-server/standalone
+
+RUN chmod -R g+rw /opt/jboss/infinispan-server/standalone
+
+USER 1000 
+
 # Expose Infinispan server  ports 
 EXPOSE 57600 7600 8080 8181 9990 11211 11222 
 
